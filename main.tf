@@ -2,6 +2,11 @@ provider "google" {
   version = "~> 2.0"  
   project = var.project
   region  = var.region
+  credentials = var.gcp_credentials
+}
+
+variable "gcp_credentials" {
+  description = "The name of the GCP Project where all resources will be launched."
 }
 
 resource "google_compute_network" "hashicat" {
